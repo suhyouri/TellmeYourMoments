@@ -1,5 +1,5 @@
 const { getDatabase_1 } = require('./notion');
-const { getDatabase_2 } = require("./notion");
+const { getDatabase_2 } = require('./notion');
 const cors = require("cors");
 const PORT = process.env.PORT;
 // const HOST = "localhost";
@@ -37,9 +37,7 @@ app.use(cors({
 app.use(express.static('public'));
 
 // ---> 1. Query a database
-app.get(
-  "https://tellme-your-moments-o1s4.vercel.app/leftpage",
-  async (req, res) => {
+app.get("/leftpage", async (req, res) => {
     const leftanswers = await getDatabase_1();
     res.header(
       "Access-Control-Allow-Origin",
