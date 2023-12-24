@@ -7,8 +7,6 @@ const getDataFromBackend_1 = async () => {
   const rest = await fetch(`/leftpage`, {
     mode: "no-cors",
   })
-  .then((response) => console.log(response))
-  .catch((error) => console.error(error));
   const data = await rest.json();
   console.log(data);
   return data;
