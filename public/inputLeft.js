@@ -1,10 +1,11 @@
 const answerFormLeft = document.getElementById("answer-form-left");
 const leftAnswer = document.getElementById("content_1");
 const leftNickname = document.getElementById("nickname_1");
-// const socket = io();
+const socket = io();
 const PORT = 8000;
 let logging = [];
 const HOST = "localhost";//here!!
+
 
 function submitFormToNotion_left(newAnsobj){
 //   console.log("i will make", newAnsobj);

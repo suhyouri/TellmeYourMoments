@@ -4,6 +4,7 @@ const rightNickname = document.getElementById("nickname_2");
 // const PORT = process.env.PORT;
 let logging_2 = [];
 // const HOST = "172.30.1.35";
+const socket = io();
 
 function submitFormToNotion_right(newAnsobj){
 //   console.log("i will make", newAnsobj);
