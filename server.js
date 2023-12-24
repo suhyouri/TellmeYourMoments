@@ -18,8 +18,6 @@ const io = new Server(server, {
   cors: {
     origin: [
       "https://admin.socket.io",
-      `http://${HOST}:${PORT}leftpage`,
-      `http://${HOST}:${PORT}/rightpage`,
     ],
     credentials: true,
   },
