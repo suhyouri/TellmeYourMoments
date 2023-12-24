@@ -1,13 +1,13 @@
 const answerFormRight = document.getElementById("answer-form-right");
 const rightAnswer = document.getElementById("content_2");
 const rightNickname = document.getElementById("nickname_2");
-const portNum = 8000;
+const PORT = process.env.PORT;
 let logging_2 = [];
 // const HOST = "172.30.1.35";
 
 function submitFormToNotion_right(newAnsobj) {
 //   console.log("i will make", newAnsobj);
-  fetch(`http://${HOST}:${portNum}/submitFormToNotion_right`, {
+  fetch(`http://${HOST}:${PORT}/submitFormToNotion_right`, {
     method: "post",
     headers: {
       Accept: "application/json",

@@ -1,6 +1,6 @@
 const PORT = 8000; //
 // let socket = io.connect();
-const HOST = "172.30.1.25"; // here!!! 192.168.0.41 fetching data
+const HOST = "localhost"; // here!!! 192.168.0.41 fetching data
 //---> left page
 const getDataFromBackend_1 = async () => {
   const rest = await fetch(`http://${HOST}:${PORT}/leftpage`);

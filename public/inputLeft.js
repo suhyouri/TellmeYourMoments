@@ -4,7 +4,7 @@ const leftNickname = document.getElementById("nickname_1");
 // const socket = io();
 const PORT = 8000;
 let logging = [];
-const HOST = "172.30.1.25";//here!!
+const HOST = "localhost";//here!!
 
 function submitFormToNotion_left(newAnsobj) {
 //   console.log("i will make", newAnsobj);

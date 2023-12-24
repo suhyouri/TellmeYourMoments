@@ -1,9 +1,9 @@
 const { getDatabase_1 } = require('./notion');
 const { getDatabase_2 } = require("./notion");
 const cors = require("cors");
-// const PORT = 8000;
+const PORT = process.env.PORT;
 // const HOST = "localhost";
-const HOST = "172.30.1.25"; // here!!!!
+const HOST = "localhost"; // here!!!!
 const { Client } = require("@notionhq/client");
 let bodyParser = require("body-parser");
 let jsonParser = bodyParser.json();
@@ -18,8 +18,8 @@ const io = new Server(server, {
   cors: {
     origin: [
       "https://admin.socket.io",
-      "http://${HOST}:${PORT}/leftpage",
-      "http://${HOST}:${PORT}/rightpage",
+      `http://${HOST}:${PORT}leftpage`,
+      `http://${HOST}:${PORT}/rightpage`,
     ],
     credentials: true,
   },
@@ -28,7 +28,7 @@ const io = new Server(server, {
 //database 
 const databaseId = process.env.NOTION_API_DATABASE;
 const databaseId_2 = process.env.NOTION_API_DATABASE_2;
-const portNum = process.env.PORT;
+
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 app.use(cors());
 
@@ -65,8 +65,8 @@ io.on("connection", (socket) => {
 // });
 
 //socket ver
-server.listen(portNum, HOST, () => {
-  console.log("Starting proxy at " + HOST + ":" + portNum);
+server.listen(PORT, HOST, () => {
+  console.log("Starting proxy at " + HOST + ":" + PORT);
 });
 
 // ---> 2. Create a page
