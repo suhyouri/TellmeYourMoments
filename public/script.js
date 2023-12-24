@@ -4,9 +4,7 @@ const HOST = "localhost"; // here!!! 192.168.0.41 fetching data
 //---> left page
 const getDataFromBackend_1 = async () => {
   // const rest = await fetch(`http://${HOST}:${PORT}/leftpage`);
-  const rest = await fetch(
-    `https://tellme-your-moments-o1s4.vercel.app:${PORT}/leftpage`
-  );
+  const rest = await fetch(`/leftpage`);
   const data = await rest.json();
   console.log(data);
   return data;

@@ -36,11 +36,19 @@ app.use(express.static('public'));
 // ---> 1. Query a database
 app.get('/leftpage', async (req, res) => {
   const leftanswers = await getDatabase_1();
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://tellme-your-moments-o1s4-i6225q72m-suhyouri.vercel.app/"
+  );
   res.json(leftanswers);
 });
 
 app.get("/rightpage", async (req, res) => {
   const rightanswers = await getDatabase_2();
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://tellme-your-moments-o1s4-i6225q72m-suhyouri.vercel.app/"
+  );
   res.json(rightanswers);
 });
 
