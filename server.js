@@ -29,7 +29,10 @@ const databaseId = process.env.NOTION_API_DATABASE;
 const databaseId_2 = process.env.NOTION_API_DATABASE_2;
 
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  credentials: true,
+}));
 
 app.use(express.static('public'));
 
