@@ -3,7 +3,8 @@ const PORT = 8000; //
 const HOST = "localhost"; // here!!! 192.168.0.41 fetching data
 //---> left page
 const getDataFromBackend_1 = async () => {
-  const rest = await fetch(`http://${HOST}:${PORT}/leftpage`);
+  // const rest = await fetch(`http://${HOST}:${PORT}/leftpage`);
+  const rest = await fetch(`http://localhost:8000/leftpage`);
   const data = await rest.json();
   console.log(data);
   return data;
