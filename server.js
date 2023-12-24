@@ -3,7 +3,7 @@ const { getDatabase_2 } = require('./notion');
 const cors = require("cors");
 const PORT = process.env.PORT;
 // const HOST = "localhost";
-const HOST = "localhost"; // here!!!!
+const HOST = "https://tellme-your-moments-o1s4-qqlfzqcqj-suhyouri.vercel.app/"; // here!!!! localhost
 const { Client } = require("@notionhq/client");
 let bodyParser = require("body-parser");
 let jsonParser = bodyParser.json();
@@ -76,9 +76,14 @@ io.on("connection", (socket) => {
 // });
 
 //socket ver
+// server.listen(PORT, HOST, () => {
+//   console.log("Starting proxy at " + HOST + ":" + PORT);
+// });
+
 server.listen(PORT, HOST, () => {
   console.log("Starting proxy at " + HOST + ":" + PORT);
 });
+
 
 // ---> 2. Create a page
 app.post("/submitFormToNotion_left", jsonParser, async (req, res) => {
