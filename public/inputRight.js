@@ -5,7 +5,7 @@ const rightNickname = document.getElementById("nickname_2");
 let logging_2 = [];
 // const HOST = "172.30.1.35";
 
-function submitFormToNotion_right(newAnsobj) {
+function submitFormToNotion_right(newAnsobj){
 //   console.log("i will make", newAnsobj);
   fetch(`/submitFormToNotion_right`, {
     method: "post",
@@ -27,7 +27,7 @@ function submitFormToNotion_right(newAnsobj) {
     });
 }
 
-// function makeContainer_right(newAns) {
+// function makeContainer_right(newAns){
 //     // console.log("i will make", newAns);
 //     const section = document.createElement("section");
 //     section.classList.add("post");
@@ -42,7 +42,7 @@ function submitFormToNotion_right(newAnsobj) {
 //     answerbox_right.appendChild(section);
 // }
 
-function handleTodoSubmit_right(e) {
+function handleTodoSubmit_right(e){
   e.preventDefault();
   // console.log("click!");
   // console.log(`rightAnswer: ${rightAnswer.value}, leftnickname: ${rightNickname.value}`);
@@ -62,7 +62,7 @@ function handleTodoSubmit_right(e) {
   submitFormToNotion_right(newAnsobj);
 }
 
-socket.on('rightmessage', function (newAns) {
+socket.on('rightmessage', function (newAns){
   // console.log("i will make", newAns);
   const section = document.createElement("section");
   section.classList.add("post");
