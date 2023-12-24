@@ -8,7 +8,7 @@ const HOST = "localhost";//here!!
 
 function submitFormToNotion_left(newAnsobj) {
 //   console.log("i will make", newAnsobj);
-  fetch(`http://${HOST}:${PORT}/submitFormToNotion_left`, {
+  fetch(`/submitFormToNotion_left`, {
     method: "post",
     headers: {
       Accept: "application/json",

@@ -18,6 +18,7 @@ const io = new Server(server, {
   cors: {
     origin: [
       "https://admin.socket.io",
+      "https://tellme-your-moments-o1s4.vercel.app/",
     ],
     credentials: true,
   },
