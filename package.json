@@ -23,4 +23,5 @@
     "socket.io-client": "^4.5.3",
     "tailwindcss": "^2.2.9"
   }
+  
 }
