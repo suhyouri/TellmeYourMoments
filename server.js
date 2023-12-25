@@ -2,8 +2,8 @@ const { getDatabase_1 } = require('./notion');
 const { getDatabase_2 } = require('./notion');
 const cors = require("cors");
 const PORT = process.env.PORT;
-// const HOST = "localhost";
-const HOST = "https://tellme-your-moments-o1s4-qqlfzqcqj-suhyouri.vercel.app/"; // here!!!! localhost
+const HOST = "localhost";
+// const HOST = "https://tellme-your-moments-o1s4-qqlfzqcqj-suhyouri.vercel.app/"; // here!!!! localhost
 const { Client } = require("@notionhq/client");
 let bodyParser = require("body-parser");
 let jsonParser = bodyParser.json();
@@ -17,9 +17,9 @@ const { Server } = require("socket.io");
 const io = new Server(server, {
   cors: {
     origin: [
-      "https://admin.socket.io",
-      "https://tellme-your-moments-o1s4.vercel.app/",
+      "*",
     ],
+    url: "https://tellme-your-moments-o1s4-qqlfzqcqj-suhyouri.vercel.app/",
     credentials: true,
   },
 });
@@ -43,6 +43,7 @@ app.get("/leftpage", async (req, res) => {
       "Access-Control-Allow-Origin",
       "https://tellme-your-moments-o1s4-i6225q72m-suhyouri.vercel.app/"
     );
+    res.send("Access-Control-Allow-Origin", "*");
     res.json(leftanswers);
   }
 );

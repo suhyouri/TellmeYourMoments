@@ -1,5 +1,6 @@
 const PORT = 8000; //
 // let socket = io.connect();
+// let socket = io();
 const HOST = "localhost"; // here!!! 192.168.0.41 fetching data
 //---> left page
 const getDataFromBackend_1 = async () => {
