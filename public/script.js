@@ -1,13 +1,9 @@
 const PORT = 8000; //
 // let socket = io.connect();
-// let socket = io();
 const HOST = "localhost"; // here!!! 192.168.0.41 fetching data
 //---> left page
 const getDataFromBackend_1 = async () => {
-  // const rest = await fetch(`http://${HOST}:${PORT}/leftpage`);
-  const rest = await fetch(`/leftpage`, {
-    mode: "no-cors",
-  })
+  const rest = await fetch(`http://${HOST}:${PORT}/leftpage`);
   const data = await rest.json();
   console.log(data);
   return data;
@@ -35,7 +31,7 @@ addDataLeft();
 
 //---right page
 const getDataFromBackend_2 = async () => {
-  const rest = await fetch(`/rightpage`);
+  const rest = await fetch(`http://${HOST}:${PORT}/rightpage`);
   const data = await rest.json();
   console.log(data);
   return data;

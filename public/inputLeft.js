@@ -6,10 +6,9 @@ const PORT = 8000;
 let logging = [];
 const HOST = "localhost";//here!!
 
-
-function submitFormToNotion_left(newAnsobj){
+function submitFormToNotion_left(newAnsobj) {
 //   console.log("i will make", newAnsobj);
-  fetch(`/submitFormToNotion_left`, {
+  fetch(`http://${HOST}:${PORT}/submitFormToNotion_left`, {
     method: "post",
     headers: {
       Accept: "application/json",
@@ -44,7 +43,7 @@ function submitFormToNotion_left(newAnsobj){
 //     answerbox_left.appendChild(section);
 // }
 
-function handleTodoSubmit_left(e){
+function handleTodoSubmit_left(e) {
     e.preventDefault();
     // console.log("click!");
     // console.log(`leftAnswer: ${leftAnswer.value}, leftnickname: ${leftNickname.value}`);
@@ -64,7 +63,7 @@ function handleTodoSubmit_left(e){
     submitFormToNotion_left(newAnsobj);
 }
 
-socket.on('leftmessage', function (newAns){
+socket.on('leftmessage', function (newAns) {
   // console.log("i will make", newAns);
   const section = document.createElement("section");
   section.classList.add("post");
